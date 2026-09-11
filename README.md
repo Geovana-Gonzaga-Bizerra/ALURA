@@ -45,32 +45,28 @@ OCI	Deploy em nuvem
 Código
 Assistente-RAG/
 │
-├── docs/
-│   └── documentos.pdf
+├── docs/              # PDFs internos da empresa
+│   └── exemplo.pdf
 │
+├── chroma_storage/    # Base vetorial persistida
 ├── src/
-│   └── app.py
-├── requirements.txt
-├── .env
-├── .gitignore
+│   └── app.py         # Código principal
+├── requirements.txt   # Dependências
+├── .env               # Chave da API
 └── README.md
-🚀 Como Executar
-Clone o repositório
 
-bash
-git clone https://github.com/seu-usuario/Assistente-RAG.git
-cd Assistente-RAG
-Crie o ambiente virtual
+📋 requirements.txt
+streamlit
+langchain
+chromadb
+google-generativeai
+pypdf
 
-bash
-python -m venv .venv
-source .venv/bin/activate   # Linux/Mac
-.\.venv\Scripts\activate    # Windows
-Instale dependências
-
-bash
-pip install -r requirements.txt
-Configure o .env com sua chave:
+🚀 Como rodar
+Instale dependências: pip install -r requirements.txt
+Configure sua chave no .env: GOOGLE_API_KEY=sua_chave_aqui
+Adicione PDFs na pasta docs/.
+Execute:streamlit run src/app.py
 
 Código
 GOOGLE_API_KEY=sua_chave_aqui
@@ -78,7 +74,7 @@ Adicione documentos na pasta docs/.
 
 Execute a aplicação:
 
-bash
+bas
 streamlit run src/app.py
 💡 Exemplos de Perguntas
 "Quais são as regras para solicitar reembolso?"
