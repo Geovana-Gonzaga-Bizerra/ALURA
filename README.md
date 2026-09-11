@@ -1,61 +1,65 @@
-🤖Assistente Corporativo Inteligente — Projeto RAG🤖
+🤖 Assistente Inteligente de Documentos — IA com RAG🤖
+Projeto desenvolvido para o Challenge Alura, com o objetivo de criar um agente de IA capaz de responder dúvidas de colaboradores com base em documentos internos da empresa.
 
-Este projeto foi desenvolvido como parte do Challenge Alura, com foco em construir um agente de IA que responde perguntas de colaboradores usando documentos internos da empresa como base.
+A aplicação utiliza a técnica de RAG (Retrieval-Augmented Generation), que combina busca semântica em documentos com geração de respostas por modelos de linguagem, garantindo informações contextualizadas e confiáveis.
 
-A aplicação combina busca semântica com geração de linguagem, garantindo respostas contextualizadas e sempre acompanhadas das fontes consultadas.
+🎯 Objetivo do Projeto
+O agente foi desenvolvido para apoiar colaboradores em dúvidas relacionadas a:
 
-🎯 Finalidade
-O agente foi criado para:
+Políticas de RH
 
-Apoiar colaboradores em dúvidas sobre políticas internas;
+Regras de Reembolso
 
-Facilitar acesso a informações de RH e benefícios;
+Benefícios corporativos
 
-Reduzir tempo gasto em consultas manuais;
+Normas internas
 
-Garantir transparência ao exibir a origem de cada resposta.
+Cada resposta inclui a fonte consultada, permitindo validação direta no documento original.
 
-🔧 Como Funciona
-Coleta de documentos: PDFs são adicionados à pasta ./base_docs.
+🏗️ Arquitetura da Solução
+📂 Ingestão de documentos: PDFs adicionados à pasta ./docs são carregados com PyPDFLoader.
 
-Divisão em blocos (chunking): os textos são segmentados para melhorar a precisão da busca.
+✂️ Segmentação (chunking): os textos são divididos em blocos menores para melhorar a precisão da busca.
 
-Criação de embeddings: cada trecho é convertido em vetor semântico.
+🧠 Embeddings: cada trecho é convertido em vetor semântico com o modelo da Google.
 
-Busca vetorial: o ChromaDB identifica os trechos mais relevantes.
+🔎 Recuperação: o ChromaDB identifica os trechos mais relevantes e envia ao modelo Gemini.
 
-Geração da resposta: o modelo Gemini utiliza os trechos recuperados para compor a resposta.
+💬 Resposta: o agente gera a resposta contextualizada e apresenta as fontes consultadas.
 
-Interface de uso: interação via Streamlit, em formato de chat simples e direto.
+🌐 Interface: interação via Streamlit, em formato de chat simples e funcional.
 
-🛠️ Stack Tecnológica
-Ferramenta	Papel
-Python	Linguagem principal
-LangChain	Orquestração do pipeline RAG
+🛠️ Tecnologias Utilizadas
+Tecnologia	Função
+Python 3.10+	Linguagem principal
+LangChain	Pipeline RAG
 Google Gemini API	Embeddings e geração de texto
-ChromaDB	Armazenamento vetorial
+ChromaDB	Banco vetorial
 Streamlit	Interface web
 PyPDFLoader	Extração de texto de PDFs
 OCI	Deploy em nuvem
 
 
-📂 Estrutura
+📂 Estrutura do Projeto
+
 Código
-Projeto-RAG/
-base_docs/
-arquivos.pdf
-src/
- app.py
-requirements.txt
-.env
-.gitignore
- README.md
-🚀 Execução
+Assistente-RAG/
+│
+├── docs/
+│   └── documentos.pdf
+│
+├── src/
+│   └── app.py
+├── requirements.txt
+├── .env
+├── .gitignore
+└── README.md
+🚀 Como Executar
 Clone o repositório
 
 bash
-git clone https://github.com/seu-usuario/Projeto-RAG.git
-cd Projeto-RAG
+git clone https://github.com/seu-usuario/Assistente-RAG.git
+cd Assistente-RAG
 Crie o ambiente virtual
 
 bash
@@ -70,7 +74,7 @@ Configure o .env com sua chave:
 
 Código
 GOOGLE_API_KEY=sua_chave_aqui
-Adicione documentos na pasta base_docs/.
+Adicione documentos na pasta docs/.
 
 Execute a aplicação:
 
