@@ -1,6 +1,5 @@
-# ALURA
-git init git add . git commit -m "feat: entrega final challenge alura agente" git remote add origin https://github.com/SEUUSUARIO/nome-repo git push -u origin main
 🤖Assistente Corporativo Inteligente — Projeto RAG🤖
+
 Este projeto foi desenvolvido como parte do Challenge Alura, com foco em construir um agente de IA que responde perguntas de colaboradores usando documentos internos da empresa como base.
 
 A aplicação combina busca semântica com geração de linguagem, garantindo respostas contextualizadas e sempre acompanhadas das fontes consultadas.
@@ -43,17 +42,14 @@ OCI	Deploy em nuvem
 📂 Estrutura
 Código
 Projeto-RAG/
-│
-├── base_docs/
-│   └── arquivos.pdf
-│
-├── src/
-│   └── app.py
-│
-├── requirements.txt
-├── .env
-├── .gitignore
-└── README.md
+base_docs/
+arquivos.pdf
+src/
+ app.py
+requirements.txt
+.env
+.gitignore
+ README.md
 🚀 Execução
 Clone o repositório
 
